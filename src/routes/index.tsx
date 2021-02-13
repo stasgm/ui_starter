@@ -3,6 +3,7 @@ import { Switch } from 'react-router-dom';
 import ToDoList from '../pages/ToDoList';
 import Route from './route';
 import SignIn from '../pages/SignIn';
+import Page from '../components/ui/Page';
 /*
 import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
@@ -18,6 +19,10 @@ import Reports from '../pages/Reports';
 import PeopleUpdate from '../pages/PeopleUpdate';
 import Notifications from '../pages/Notifications';
 import CheckOut from '../pages/CheckOut'; */
+
+const NotFound = () => {
+  return <Page title="The Page is not found" />;
+};
 
 const Routes = () => (
   <Switch>
@@ -41,6 +46,7 @@ const Routes = () => (
       isPrivate
     />
     <Route path="/reports" component={Reports} isPrivate /> */}
+    <Route component={NotFound} />
   </Switch>
 );
 

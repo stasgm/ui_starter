@@ -4,7 +4,7 @@ import Divider from './Divider';
 
 interface IProps {
   title: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Header = styled.div`

@@ -51,7 +51,7 @@ interface IProps {
 
 const NavLink = ({ children, iconClassName, label, ...rest }: IProps) => {
   return (
-    <StyledLink to="/products" {...rest}>
+    <StyledLink to="/" {...rest}>
       {children || (
         <>
           <i className={iconClassName} />
