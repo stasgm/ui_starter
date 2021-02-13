@@ -1,0 +1,41 @@
+.trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 32px;
+  margin: 16px;
+  /* background: rgba(255, 255, 255, 0.3); */
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.grid {
+  display: grid;
+  grid:
+    "nav header"min-content "nav main"1fr / min-content 1fr;
+  min-height: 100vh;
+}
+
+.grid-nav {
+  grid-area: nav;
+  z-index: 2000;
+}
+
+.grid-header {
+  grid-area: header;
+}
+
+.grid-main {
+  grid-area: main
+}
