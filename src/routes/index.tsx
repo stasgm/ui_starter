@@ -23,6 +23,7 @@ const Routes = () => (
   <Switch>
     <Route path="/" exact component={SignIn} />
     <Route path="/todolist" component={ToDoList} />
+    <Route path="/signin" component={SignIn} />
     {/*     <Route path="/forgot-password" component={ForgotPassword} />
     <Route path="/reset-password" component={ResetPassword} />
 

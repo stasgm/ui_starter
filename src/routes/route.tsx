@@ -21,7 +21,7 @@ const Route = ({ isPrivate = false, component: Component, ...rest }: RouteProps)
         return (
           <Redirect
             to={{
-              pathname: isPrivate ? '/' : '/todolist',
+              pathname: isPrivate ? '/' : '/signin',
               state: { from: location },
             }}
           />
