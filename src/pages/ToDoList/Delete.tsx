@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Popconfirm, Button } from 'antd';
-import { IItem } from '../../../model';
-import { useAppStore } from '../../../store';
+import { IItem } from '../../model';
+import { useAppStore } from '../../store';
 
 interface IProps {
   record: IItem;

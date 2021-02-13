@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Button, Form, Row, Typography } from 'antd';
 
 import { v1 as uuid } from 'uuid';
-import { openNotification } from '../../../utils/functions/openNotification';
+import { openNotification } from '../../utils/functions/openNotification';
 
-import { Calendar } from './Calendar.component';
-import { FormInput } from './FormInput.component';
-import { useStore } from '../../../store/App/store';
-import { IItem } from '../../../model';
+import { Calendar } from './Calendar';
+import { FormInput } from './FormInput';
+import { useStore } from '../../store/App/store';
+import { IItem } from '../../model';
 
 const { Title } = Typography;
 
@@ -21,14 +21,14 @@ export const AddTodoForm = () => {
   const [date, setDate] = useState<string>();
   const { actions } = useStore();
 
-  const hasDate = date ? true : false;
+  const hasDate = !!date;
 
   const formSubmit = () => {
     if (date && form?.title.length >= 5) {
       const item: IItem = { title: form.title, date: form.date, key: uuid(), completed: 'false' };
       actions.addItem(item);
     } else {
-      openNotification('bottomLeft', 'Title must be a minimum of 5 letters');
+      openNotification('bottomRight', 'Title must be a minimum of 5 letters');
     }
   };
 

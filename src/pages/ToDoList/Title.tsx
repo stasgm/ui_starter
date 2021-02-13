@@ -1,5 +1,5 @@
 import React from 'react';
-import { IItem } from '../../../model/base';
+import { IItem } from '../../model/base';
 
 interface IProps {
   record: IItem;

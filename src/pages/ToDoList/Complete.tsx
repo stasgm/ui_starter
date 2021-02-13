@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Button } from 'antd';
-import { IItem } from '../../../model/base';
-import { useAppStore } from '../../../store';
+import { IItem } from '../../model/base';
+import { useAppStore } from '../../store';
 
 interface IProps {
   record: IItem;

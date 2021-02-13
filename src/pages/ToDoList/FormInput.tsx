@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Form, Input } from 'antd';
 import { TagsOutlined } from '@ant-design/icons';
-import { IForm } from './AddTodoForm.component';
+import { IForm } from './AddTodoForm';
 
 interface IProps {
   setForm: (form: IForm) => void;
