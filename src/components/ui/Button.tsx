@@ -2,11 +2,10 @@ import styled, { css } from 'styled-components';
 import React from 'react';
 import Loading from './Loading';
 
-interface IProps {
+interface IProps extends React.ComponentPropsWithoutRef<'button'> {
   loading?: boolean;
   variant?: string;
   outline?: boolean;
-  children: React.ReactNode;
 }
 
 const ButtonStyled = styled.button<IProps>`
@@ -21,10 +20,12 @@ const ButtonStyled = styled.button<IProps>`
   border-radius: var(--border-radius);
   font-size: var(--fsize-3);
   cursor: pointer;
+  transition: 0.3s;
   &:hover {
-    background-color: var(--color-${(p) => p.variant || 'light'}-hover);
+    // background-color: var(--color-${(p) => p.variant || 'light'}-hover);
     border-color: var(--color-border-hover);
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.15);
+    opacity: 0.4;
   }
   :active {
     box-shadow: none;

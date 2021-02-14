@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AppStoreProvider } from '../store';
 
-import './../assets/scss/App.scss';
+// import './../assets/scss/App.scss';
 import AppLayout from './Layout';
 import Routes from '../routes';
 

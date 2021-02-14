@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
-import ToDoList from '../pages/ToDoList';
+import { ToDoList, ToDoListItem } from '../pages/ToDoList';
 import Route from './route';
 import SignIn from '../pages/SignIn';
 import Page from '../components/ui/Page';
@@ -27,25 +27,10 @@ const NotFound = () => {
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={SignIn} />
-    <Route path="/todolist" component={ToDoList} />
+    <Route path="/todolist" exact component={ToDoList} />
+    <Route path="/todolist/:id" component={ToDoListItem} />
     <Route path="/signin" component={SignIn} />
-    {/*     <Route path="/forgot-password" component={ForgotPassword} />
-    <Route path="/reset-password" component={ResetPassword} />
-
-    <Route path="/profile" component={Profile} isPrivate />
-    <Route path="/notifications" component={Notifications} isPrivate />
-
-    <Route path="/people" exact component={People} isPrivate />
-    <Route path="/checkin" component={CheckIn} isPrivate />
-    <Route path="/checkout" component={CheckOut} isPrivate />
-    <Route path="/people/:id" component={PeopleUpdate} isPrivate />
-    <Route path="/home-services" component={HomeServices} isPrivate />
-    <Route
-      path="/professional-services"
-      component={ProfessionalServices}
-      isPrivate
-    />
-    <Route path="/reports" component={Reports} isPrivate /> */}
+    {/* <Route path="/reports" component={Reports} isPrivate /> */}
     <Route component={NotFound} />
   </Switch>
 );

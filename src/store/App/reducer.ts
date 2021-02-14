@@ -1,8 +1,7 @@
 import { Reducer } from 'react';
 
 import { IAppState } from '../../model';
-import { FORM_INITIAL_STATE } from '../../utils/constants/INITIAL_STATE';
-import { openNotification } from '../../utils/functions/openNotification';
+import { FORM_INITIAL_STATE } from '../../pages/ToDoList/constants/INITIAL_STATE';
 import { TAppActions, ActionAppTypes } from './actions';
 
 export const initialState: IAppState = {
@@ -10,23 +9,22 @@ export const initialState: IAppState = {
 };
 
 export const reducer: Reducer<IAppState, TAppActions> = (state = initialState, action): IAppState => {
+  console.log(action);
   switch (action.type) {
     case ActionAppTypes.ADD_TODO:
-      openNotification('bottomLeft', 'TODO added');
       return { ...state, items: [...state.items, action.payload] };
-    // state.push({ title, date, key: uuidv4(), completed: 'false' });
-    /*     case ActionAppTypes.COMPLETE_TODO:
-      openNotification('bottomLeft', 'TODO completed');
-      const todoToComplete = state.filter((todo) => todo.key === action.payload)[0];
-      if (todoToComplete) {
-        todoToComplete.completed = 'true';
-      }
-      break;
+    case ActionAppTypes.EDIT_TODO:
+      return { ...state, items: state.items.map((i) => (i.key === action.payload.key ? action.payload : i)) };
+    case ActionAppTypes.COMPLETE_TODO:
+      return {
+        ...state,
+        items: state.items.map((item) => {
+          return item.key == action.payload ? { ...item, completed: !item.completed } : item;
+        }),
+      };
     case ActionAppTypes.DELETE_TODO:
-      openNotification('bottomLeft', 'TODO deleted');
-      return {...state, items: state.items.filter((item) => item.key !== action.payload); */
+      return { ...state, items: state.items.filter((item) => item.key !== action.payload) };
     default:
-      openNotification('bottomLeft', 'An error has occured!');
       return state;
   }
 };

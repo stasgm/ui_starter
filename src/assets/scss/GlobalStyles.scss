@@ -51,13 +51,15 @@ html {
   --fsize-9: 32px;
   --height-input: var(--space-4);
   --height-button: var(--space-4);
-  --min-width-button: var(--space-4);
-  --px-button: var(--space-2);
+  --px-button: var(--space-3);
+  --grid-lines: var(--space-2);
+  --min-width-button: var(--space-2);
   --navbar-width: 256px;
 
   @media(max-width: $desktop) {
-    --height-button: calc(var(--space-4) + 8px);
-    --px-button: calc(var(--space-2) + 8px);
+    --height-button: calc(var(--space-4));
+    --px-button: calc(var(--space-3));
+    --grid-lines: calc(var(--space-1))
   }
 }
 

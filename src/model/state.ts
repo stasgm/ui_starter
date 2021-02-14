@@ -1,5 +1,5 @@
 import { AppActions } from '../store';
-import { IItem } from './base';
+import { IItem } from '../pages/ToDoList/types';
 
 export interface IAppContextProps {
   state: IAppState;

@@ -10,9 +10,6 @@ interface IHeaderProps {
 
 const Grid = styled.div`
   display: grid;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   grid-template-columns: min-content 1fr min-content;
   height: 48px;
   align-items: stretch;
